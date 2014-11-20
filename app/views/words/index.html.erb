@@ -1,5 +1,20 @@
 <h1>Listing words</h1>
 
+<!-- <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="Search">
+  </label>
+  <button class="button button-clear">
+    search
+  </button>
+</div> -->
+
+
+
+
+
+
 <table>
   <thead>
     <tr>
@@ -19,10 +34,14 @@
         <td><%= link_to 'Show', word %></td>
         <td><%= link_to 'Edit', edit_word_path(word) %></td>
         <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= image_tag word.image.url(:thumb), :alt => "" %></td>
+         <td><%= audio_tag(word.audio_file_name) %></td>
       </tr>
+     
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 

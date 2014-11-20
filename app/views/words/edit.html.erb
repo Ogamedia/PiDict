@@ -1,6 +1,10 @@
 <h1>Editing word</h1>
 
+<%= image_tag @word.image.url(:thumb), :alt => "" %>
+
 <%= render 'form' %>
+
+
 
 <%= link_to 'Show', @word %> |
 <%= link_to 'Back', words_path %>

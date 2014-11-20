@@ -42,3 +42,6 @@ gem 'twitter-bootstrap-rails'
 gem "therubyracer"
 gem "less-rails"
 gem "font-awesome-rails"
+
+gem 'paperclip', "~> 4.2"
+gem 'rmagick', '~> 2.13.3'

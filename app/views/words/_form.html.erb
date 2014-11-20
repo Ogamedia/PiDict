@@ -1,4 +1,4 @@
-<%= form_for(@word) do |f| %>
+<%= form_for @word, :html => {:multipart => true} do |f| %>
   <% if @word.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
@@ -19,10 +19,23 @@
     <%= f.label :pronunciation %><br>
     <%= f.text_field :pronunciation %>
   </div>
+<!-- adding sound for pronunciation -->
+  <div>
+    <%= f.file_field :image %>
+  </div>
+
   <div class="field">
     <%= f.label :origin %><br>
     <%= f.text_field :origin %>
   </div>
+
+  <!-- for image and file fields -->
+ 
+
+   <div>
+    <%= f.file_field :audio %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

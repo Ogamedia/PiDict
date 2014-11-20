@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Term:</strong>
-  <%= @word.term %>
-</p>
 
-<p>
-  <strong>Pronunciation:</strong>
-  <%= @word.pronunciation %>
-</p>
 
-<p>
-  <strong>Origin:</strong>
-  <%= @word.origin %>
-</p>
+
+<div>
+			 <strong>Term:</strong>
+			 <h2><%= @word.term %></h2> 
+
+            <p>
+			  <strong>Pronunciation:</strong>
+			  <%= @word.pronunciation %>
+			</p>
+
+			<%= image_tag @word.image.url(:thumb), :alt => "" %>
+			<p>
+			  <strong>Origin:</strong>
+			  <%= @word.origin %>
+			</p>
+</div>
 
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>
