@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @word.term %>
+</p>
+
+<p>
+  <strong>Pronunciation:</strong>
+  <%= @word.pronunciation %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @word.origin %>
+</p>
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
