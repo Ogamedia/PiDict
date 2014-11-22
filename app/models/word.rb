@@ -1,4 +1,5 @@
 class Word < ActiveRecord::Base
+	has_many :meanings
 
 	validates_presence_of :term, :origin, :pronunciation
 	validates_length_of :term, :origin, :pronunciation, :minimum => 3
@@ -8,5 +9,5 @@ class Word < ActiveRecord::Base
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	has_attached_file :audio
-	validates_attachment_content_type :audio, :content_type => ['audio/mp3','audio/mpeg', 'audio/ogg']
+	validates_attachment_content_type :audio, :content_type => ['audio/mp3','audio/mpeg', 'audio/ogg', 'audio/wav']
 end

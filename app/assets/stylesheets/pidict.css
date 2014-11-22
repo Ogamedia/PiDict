@@ -9,3 +9,7 @@ body {
 .navedit_content {
 	background-color: blue;
 }
+
+audio {
+	background-color: yellow;
+}

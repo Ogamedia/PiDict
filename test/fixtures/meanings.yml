@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meaning_number: 1
+  part_of_speech: MyString
+  definition: MyText
+
+two:
+  meaning_number: 1
+  part_of_speech: MyString
+  definition: MyText

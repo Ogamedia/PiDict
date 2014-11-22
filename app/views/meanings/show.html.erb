@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Meaning number:</strong>
+  <%= @meaning.meaning_number %>
+</p>
+
+<p>
+  <strong>Part of speech:</strong>
+  <%= @meaning.part_of_speech %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @meaning.definition %>
+</p>
+
+<%= link_to 'Edit', edit_meaning_path(@meaning) %> |
+<%= link_to 'Back', meanings_path %>

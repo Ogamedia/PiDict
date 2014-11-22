@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120161718) do
+ActiveRecord::Schema.define(version: 20141122075719) do
+
+  create_table "meanings", force: true do |t|
+    t.integer  "meaning_number"
+    t.string   "part_of_speech"
+    t.text     "definition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "words", force: true do |t|
     t.string   "term"
