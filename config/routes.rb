@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :meanings
+  
 
-  resources :words
-
+  resources :words do
+    resources :meanings
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
