@@ -4,12 +4,20 @@
 
 <%= render 'form' %>
 
-<div>
+<div class="jumbotron">
 		<% @word.meanings.each do |meaning|%>
-			<%= meaning.meaning_number %>
-			er
-			<%= meaning.definition %>
-			<% end %>
+				<table class="table table-responsive">
+					<tbody>
+						<tr>
+							<td><%= meaning.meaning_number %></td>
+							<td>
+								<%= meaning.definition %>
+							</td>
+							<td><%= meaning.context %></td>
+						</tr>
+					</tbody>
+				</table>
+		<% end %>
 	</div>
 
 
