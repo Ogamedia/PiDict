@@ -1,6 +1,6 @@
 class Word < ActiveRecord::Base
-	has_many :meanings
-	
+	has_many :meanings, dependent: :destroy
+
 
 	validates_presence_of :term, :origin, :pronunciation
 	validates_length_of :term, :origin, :pronunciation, :minimum => 3

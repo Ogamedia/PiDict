@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<div >
-	<p>meaning</p>
-	<%= render "meanings/form" %>
-</div>
 
 <div>
 			 <strong>Term:</strong>
@@ -20,6 +16,13 @@
 			  <%= @word.origin %>
 			</p>
 </div>
+	<div>
+		<% @word.meanings.each do |meaning|%>
+			<%= meaning.meaning_number %>
+			er
+			<%= meaning.definition %>
+			<% end %>
+	</div>
 
-<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Edit', edit_word_path(@word) %> 
 <%= link_to 'Back', words_path %>

@@ -1,6 +1,7 @@
 class WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
   layout 'main'
+  
 
   # GET /words
   # GET /words.json

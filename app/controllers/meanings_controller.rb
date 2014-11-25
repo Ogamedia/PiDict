@@ -25,8 +25,11 @@ class MeaningsController < ApplicationController
   # POST /meanings.json
   def create
     @word = Word.find(params[:word_id])
-    @meaning = @word.meanings.create(params[:id])
-    redirect_to word_path(@word)
+    @meaning = @word.meanings.create(meaning_params)
+
+    if @meaning.save
+     redirect_to edit_word_path(@word)
+    end
     # respond_to do |format|
     #   if @meaning.save
     #     format.html { redirect_to @meaning, notice: 'Meaning was successfully created.' }
