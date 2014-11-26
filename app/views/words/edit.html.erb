@@ -4,7 +4,27 @@
 
 <%= render 'form' %>
 
+<div class="jumbotron">
+		<% @word.meanings.each do |meaning|%>
+				<table class="table table-responsive">
+					<tbody>
+						<tr>
+							<td><%= meaning.meaning_number %></td>
+							<td>
+								<%= meaning.definition %>
+							</td>
+							<td><%= meaning.context %></td>
+						</tr>
+					</tbody>
+				</table>
+		<% end %>
+	</div>
 
+
+<div >
+	<h1>meaning</h1>
+	<%= render "meanings/form" %>
+</div>
 
 <%= link_to 'Show', @word %> |
 <%= link_to 'Back', words_path %>

@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 
-
-
 <div>
 			 <strong>Term:</strong>
 			 <h2><%= @word.term %></h2> 
@@ -18,6 +16,21 @@
 			  <%= @word.origin %>
 			</p>
 </div>
+	<div class="jumbotron">
+		<% @word.meanings.each do |meaning|%>
+			<table class="table table-responsive">
+					<tbody>
+						<tr>
+							<td><%= meaning.meaning_number %></td>
+							<td>
+								<%= meaning.definition %>
+							</td>
+							<td><%= meaning.context %></td>
+						</tr>
+					</tbody>
+				</table>
+			<% end %>
+	</div>
 
-<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Edit', edit_word_path(@word) %> 
 <%= link_to 'Back', words_path %>

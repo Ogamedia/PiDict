@@ -24,6 +24,7 @@ class ExamplesController < ApplicationController
   # POST /examples
   # POST /examples.json
   def create
+<<<<<<< HEAD
     @meaning = Meaning.find(params[:meaning_id])
     @example = @meaning.examples.create(example_params)
 
@@ -39,6 +40,19 @@ class ExamplesController < ApplicationController
     #     format.json { render json: @word.errors, status: :unprocessable_entity }
     #   end
     # end
+=======
+    @example = Example.new(example_params)
+
+    respond_to do |format|
+      if @example.save
+        format.html { redirect_to @example, notice: 'Example was successfully created.' }
+        format.json { render :show, status: :created, location: @example }
+      else
+        format.html { render :new }
+        format.json { render json: @example.errors, status: :unprocessable_entity }
+      end
+    end
+>>>>>>> 0160b3998bdbb91f61132a6a7e25027749953745
   end
 
   # PATCH/PUT /examples/1
@@ -73,6 +87,10 @@ class ExamplesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def example_params
+<<<<<<< HEAD
       params.require(:example).permit(:body, :source, :meaning_id)
+=======
+      params.require(:example).permit(:body, :source)
+>>>>>>> 0160b3998bdbb91f61132a6a7e25027749953745
     end
 end

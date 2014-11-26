@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122075719) do
+ActiveRecord::Schema.define(version: 20141125051722) do
+
+  create_table "examples", force: true do |t|
+    t.text     "body"
+    t.text     "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "meanings", force: true do |t|
     t.integer  "meaning_number"
@@ -19,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141122075719) do
     t.text     "definition"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "word_id"
+    t.text     "context"
   end
 
   create_table "words", force: true do |t|
