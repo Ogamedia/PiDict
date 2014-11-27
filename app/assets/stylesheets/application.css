@@ -16,5 +16,15 @@
 body { 
 	padding: 60px;
 	padding-top: 5%;
-	background: #AA4847 ;
+	background: #3498db ;
+}
+
+.term {
+	padding-left:10%;
+}
+
+.pronounce {
+	height: 30px;
+	width: 30px;
+	margin-top: 80%;
 }

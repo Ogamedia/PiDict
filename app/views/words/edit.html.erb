@@ -1,30 +1,48 @@
 <h1>Editing word</h1>
 
-<%= image_tag @word.image.url(:thumb), :alt => "" %>
 
-<%= render 'form' %>
 
-<div class="jumbotron">
-		<% @word.meanings.each do |meaning|%>
-				<table class="table table-responsive">
-					<tbody>
-						<tr>
-							<td><%= meaning.meaning_number %></td>
-							<td>
-								<%= meaning.definition %>
-							</td>
-							<td><%= meaning.context %></td>
-						</tr>
-					</tbody>
-				</table>
-		<% end %>
+<div class="container">
+	<div class="row">
+	<!-- columns for words -->
+		<div class="jumbotron col-md-3" style="margin-right:2px;">
+			<h1>Word</h1>
+			<%= image_tag @word.image.url(:thumb), :alt => "" %>
+
+			<%= render 'form' %>
+		</div> <!-- end of words column -->
+
+	<!-- columns for meanings -->
+		<div class="jumbotron col-md-4" style="margin-right:2px;">
+			<div>
+				<h1>meaning</h1>
+				<%= render "meanings/form" %>
+			</div>
+
+			<div>
+				<% @word.meanings.each do |meaning|%>
+						<table class="table table-responsive">
+							<tbody>
+								<tr>
+									<td><%= meaning.meaning_number %></td>
+									<td><%= meaning.definition %></td>
+									<td><%= meaning.context %></td>
+								</tr>
+							</tbody>
+						</table>
+				<% end %>
+			
+
+			</div>
+		</div> <!-- end of meanings column -->
+
+		<!-- editing meaning column -->
+		<div class="jumbotron col-md-4" style="margin-right:2px;">
+
+		<!-- end of editing meaning column -->
 	</div>
-
-
-<div >
-	<h1>meaning</h1>
-	<%= render "meanings/form" %>
 </div>
+
 
 <%= link_to 'Show', @word %> |
 <%= link_to 'Back', words_path %>

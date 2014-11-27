@@ -14,6 +14,7 @@ class MeaningsController < ApplicationController
 
   # GET /meanings/new
   def new
+    # @word = Word.find(params[:word_id])
     @meaning = Meaning.new
   end
 
@@ -25,20 +26,18 @@ class MeaningsController < ApplicationController
   # POST /meanings.json
   def create
     @word = Word.find(params[:word_id])
-    @meaning = @word.meanings.create(meaning_params)
+    if @word.meanings.first.nil?
+      @meaning = @word.meanings.build(meaning_params)   #new
+      @meaning.meaning_number = 1 #set it number to 1
+      @meaning.save #save it
 
-    if @meaning.save
-     redirect_to edit_word_path(@word)
+    else
+      @meaning = @word.meanings.build(meaning_params)   #new
+      @meaning.meaning_number = @word.meanings.order(:meaning_number => :asc).last.meaning_number + 1 #set it number to 1
+      @meaning.save #save it
     end
-    # respond_to do |format|
-    #   if @meaning.save
-    #     format.html { redirect_to @meaning, notice: 'Meaning was successfully created.' }
-    #     format.json { render :show, status: :created, location: @meaning }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @meaning.errors, status: :unprocessable_entity }
-    #   end
-    # end
+
+    redirect_to edit_word_path(@word)
   end
 
   # PATCH/PUT /meanings/1
@@ -73,6 +72,6 @@ class MeaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meaning_params
-      params.require(:meaning).permit(:meaning_number, :part_of_speech, :definition, :word_id)
+      params.require(:meaning).permit(:meaning_number, :part_of_speech, :definition, :context, :word_id)
     end
 end

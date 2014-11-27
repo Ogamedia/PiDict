@@ -21,6 +21,7 @@
   </div>
 <!-- adding sound for pronunciation -->
   <div>
+    <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
 
@@ -33,10 +34,12 @@
  
 
    <div>
+    <%= f.label :audio %>
     <%= f.file_field :audio %>
-  </div>
+  </div><br>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
