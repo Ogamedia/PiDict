@@ -25,7 +25,6 @@
 					<p>
 					<%= image_tag @word.image.url(:thumb), :alt => "" %>
 					</p>
-
 			</div>
 
 		</div>
@@ -44,6 +43,9 @@
 									</td>
 									<td>
 										<%= meaning.context %>
+									</td>
+									<td>
+										<%= link_to 'delete', [meaning.word, meaning], method: :delete, data: {confirm: 'are you sure?'}  %>
 									</td>
 								</tr>
 							</tbody>

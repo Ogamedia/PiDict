@@ -57,16 +57,21 @@ class MeaningsController < ApplicationController
   # DELETE /meanings/1
   # DELETE /meanings/1.json
   def destroy
+    @word = Word.find(params[:word_id])
+    @meaning = @word.meanings.find(params[:id])
     @meaning.destroy
-    respond_to do |format|
-      format.html { redirect_to meanings_url, notice: 'Meaning was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to meanings_url, notice: 'Meaning was successfully destroyed.' }
+    #   format.json { head :no_content }
+    
+    # end
+    redirect_to word_path(@word)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meaning
+      @word = Word.find(params[:word_id]) 
       @meaning = Meaning.find(params[:id])
     end
 
