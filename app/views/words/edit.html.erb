@@ -19,21 +19,34 @@
 				<%= render "meanings/form" %>
 			</div>
 
-			<div>
+
+
+	<div class="row">
+			<div class="jumbotron">
 				<% @word.meanings.each do |meaning|%>
-						<table class="table table-responsive">
+					<table class="table table-responsive">
 							<tbody>
 								<tr>
-									<td><%= meaning.meaning_number %></td>
-									<td><%= meaning.definition %></td>
-									<td><%= meaning.context %></td>
+									<td>
+										<%= meaning.meaning_number %>
+									</td>
+									<td>
+										<%= meaning.definition %>
+									</td>
+									<td>
+										<%= meaning.context %>
+									</td>
+									<td><%= link_to 'editor' %></td>
+									<td>
+										<%= link_to 'delete', [meaning.word, meaning], method: :delete, data: {confirm: 'are you sure?'}  %>
+									</td>
 								</tr>
 							</tbody>
 						</table>
-				<% end %>
-
+					<% end %>
 			</div>
-		</div> <!-- end of meanings column -->
+		</div>
+	</div> <!-- end of meanings column -->
 
 		<!-- editing meaning column -->
 		<div class="jumbotron col-md-4" style="margin-right:2px;">

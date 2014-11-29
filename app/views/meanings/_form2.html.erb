@@ -1,0 +1,22 @@
+<%= form_for ([@word, @meaning]) do |f| %>
+
+  <div class="field">
+    <%= f.label :meaning_number %><br>
+    <%= f.number_field :meaning_number %>
+  </div>
+  <div class="field">
+    <%= f.label :part_of_speech %><br>
+    <%= f.text_field :part_of_speech %>
+  </div>
+  <div class="field">
+    <%= f.label :definition %><br>
+    <%= f.text_area :definition %>
+  </div>
+   <div class="field">
+    <%= f.label :context %><br>
+    <%= f.text_area :context %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

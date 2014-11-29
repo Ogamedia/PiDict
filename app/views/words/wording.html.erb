@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="term col-md-4 col-sm-5 col-xs-5">
+				<strong>Term:</strong>
+				<h2><%= @word.term %></h2> 
+		        <p>
+					<strong>Pronunciation:</strong>
+					<%= @word.pronunciation %>
+				</p>
+				<p>
+					<strong>Origin:</strong>
+					<%= @word.origin %>
+				</p>
+			</div>
+
+			<div class="col-md-offset-1 col-md-1 col-sm-2 col-xs-2" style="margin:2px;">
+			<%= link_to(image_tag('speaker.png', :class => "pronounce")) %>
+			</div>
+
+			<div class="col-md-2 col-sm-4 col-xs-4">
+					<p>
+					<%= image_tag @word.image.url(:thumb), :alt => "" %>
+					</p>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="jumbotron col-md-11">
+				<% @word.meanings.each do |meaning|%>
+					<table class="table table-responsive">
+							<tbody>
+								<tr>
+									<td>
+										<%= meaning.meaning_number %>
+									</td>
+									<td>
+										<%= meaning.definition %>
+									</td>
+									<td>
+										<%= meaning.context %>
+									</td>
+									<td><%= link_to 'editor', edit_word_meaning_path(meaning.word, meaning)  %></td>
+									<td>
+										<%= link_to 'delete', [meaning.word, meaning], method: :delete, data: {confirm: 'are you sure?'}  %>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					<% end %>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> 
+<%= link_to 'Back', words_path %>
