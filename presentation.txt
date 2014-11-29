@@ -27,3 +27,34 @@ everybody who speaks pidgin english speaks a formal language
 story:
 when you go to nigeria, Musa the security man barely went to school; his mother tongue is hausa but he can communicate with his boss from the US. the only way they can communicate is through an intepreter: pidgin english
 
+
+
+
+<h1>Editing meaning</h1>
+
+
+<!-- one edit page which shows all the forms
+one new page which shows all the forms
+one show page to shows word; meaning; and examples
+
+one index page(Search; word of the day;)
+one about page(what is pidgin english;)
+
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @meaning %> |
+<%= link_to 'Back', meanings_path %>
+
+-->
+
+
+
+
+<!--
+hit edit;
+show meaning edit form
+submit
+show word edit page
+-->

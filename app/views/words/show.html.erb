@@ -44,6 +44,7 @@
 									<td>
 										<%= meaning.context %>
 									</td>
+									<td><%= link_to 'editor', edit_word_meaning_path(meaning.word, meaning)  %></td>
 									<td>
 										<%= link_to 'delete', [meaning.word, meaning], method: :delete, data: {confirm: 'are you sure?'}  %>
 									</td>
@@ -60,7 +61,7 @@
 
 
 
-			
+
 
 
 <%= link_to 'Edit', edit_word_path(@word) %> 

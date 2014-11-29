@@ -1,6 +1,6 @@
 class MeaningsController < ApplicationController
   before_action :set_meaning, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_word
   # GET /meanings
   # GET /meanings.json
   def index
@@ -25,7 +25,6 @@ class MeaningsController < ApplicationController
   # POST /meanings
   # POST /meanings.json
   def create
-    @word = Word.find(params[:word_id])
     if @word.meanings.first.nil?
       @meaning = @word.meanings.build(meaning_params)   #new
       @meaning.meaning_number = 1 #set it number to 1
@@ -43,37 +42,32 @@ class MeaningsController < ApplicationController
   # PATCH/PUT /meanings/1
   # PATCH/PUT /meanings/1.json
   def update
-    respond_to do |format|
+    
+  
       if @meaning.update(meaning_params)
-        format.html { redirect_to @meaning, notice: 'Meaning was successfully updated.' }
-        format.json { render :show, status: :ok, location: @meaning }
-      else
-        format.html { render :edit }
-        format.json { render json: @meaning.errors, status: :unprocessable_entity }
+       redirect_to edit_word_path(@word)
       end
-    end
   end
 
   # DELETE /meanings/1
   # DELETE /meanings/1.json
   def destroy
-    @word = Word.find(params[:word_id])
-    @meaning = @word.meanings.find(params[:id])
     @meaning.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to meanings_url, notice: 'Meaning was successfully destroyed.' }
-    #   format.json { head :no_content }
-    
-    # end
+
     redirect_to word_path(@word)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meaning
-      @word = Word.find(params[:word_id]) 
+      # @word = Word.find(params[:word_id])
       @meaning = Meaning.find(params[:id])
     end
+
+    def set_word
+      @word = Word.find(params[:word_id])
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meaning_params
