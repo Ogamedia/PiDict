@@ -150,4 +150,18 @@ body {
 	.form-wrapper{
 		margin: 0 4% 0 0%;
 	}
-	}
+}
+
+.audio-player {
+    /*background-color:  blue;*/
+    color: yellow;
+    width: 45px;
+    background-image: url(/assets/speaker.png);
+    margin-left: 45%;
+}
+
+@media (max-width: 700px) {
+    .audio-player {
+    margin-left: 38%;
+    }
+}

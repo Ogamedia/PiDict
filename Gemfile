@@ -34,6 +34,7 @@ group :development do
   gem "binding_of_caller"
   gem 'spring'
   gem 'pry'
+  gem 'pry-byebug'
 end
 
 # Use unicorn as the app server

@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag('application')%>
     <%= javascript_include_tag('application')%>
 
+
 </head>
     <body>
         <!-- nav bar -->
@@ -18,14 +19,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="/">PIDICT</a>
+                  <a class="navbar-brand" href="/", style="color:white;">PIDICT</a>
                 </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="navedit_content nav navbar-nav">
-                    <li><a href="#">about<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">contact us</a></li>
+                    <li><a href="#" style="color:white">about<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#" style="color:white">contact us</a></li>
                   </ul> 
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
@@ -34,8 +35,6 @@
         <div class="container" style="background">
              <%= yield %>
         </div>
-           
-
         <!-- content and yield -->
 
     </body>

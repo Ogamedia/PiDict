@@ -7,12 +7,40 @@
 }
 
 .navbar {
-	background-color: #2c3e50;
+	background-color: #446CB3;
+	padding: 0;
+}
+
+.navbar-brand {
+	color: white;
+	font: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: black;
 }
 
 audio {
 	background-color: yellow;
 }
+
+h5 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 60px
+}
+
+@media (max-width: 768px) {
+	h5{
+		font-size: 16px;
+	}
+	h2 {
+	font-size: 40px
+}
+}
+
+
 
 /*.word {
 	margin
@@ -22,8 +50,9 @@ audio {
 	margin-top: 15%;
 	/*float: right;*/
 	/*margin-left: 30%;*/
-	width: 600px; 
-	height: 424px;
+	width: 600px;
+	/*overflow: auto;*/
+	height: 550px;
 	border: 8px solid #fff;	
 	-webkit-transform-style: preserve-3d;
 	-webkit-transition: 1s;
@@ -31,7 +60,7 @@ audio {
 
 @media (max-width: 768px){
 	.worded{
-		margin-top: 20%;
+		margin-top: 10%;
 		width: 324px; 
 		height: 412px;
 		border: 8px solid #fff;	
@@ -64,14 +93,14 @@ audio {
 	width: 100%;
 	height:	100%;
 	padding: 20px;
-	background-color: #F62459;
+	background-color: #2ABB9B; 
 	}
 
 .megatron .back {
 	width: 100%;
 	height:	100%;
 	padding: 20px;
-	background-color: #89C4F4;
+	background-color: #C8F7C5;
 	-webkit-transform: rotateY(180deg);;
 	   -moz-transform: rotateY(180deg);;
 	    -ms-transform: rotateY(180deg);;
@@ -85,4 +114,65 @@ audio {
 }
 .container:hover .front {
 	z-index: 0;
-} 
+}
+
+
+
+.meaning_card {
+    margin-top: 0.5%;
+    margin-left:3%;
+	width: 500px; 
+	height: 206px;
+	background-color: white;
+	margin-left: 1%;
+}
+
+@media (max-width: 740px) {
+	.meaning_card {
+    margin-top: 1%;
+    padding: 2%;
+	width: 240px;
+	height: 160px;
+	background-color: white;
+	}
+}
+
+
+@media (min-width: 740px) {
+	.well {
+		width:490px;
+		margin-left: 3px;
+		margin-right: 3px;
+	}
+}
+
+
+
+@media (min-width: 740px) {
+	.define {
+		width:490px;
+		margin-left: 3px;
+		margin-right: 3px;
+		margin-top:1%;
+		margin-bottom: 1%;
+	}
+
+
+
+.define {
+		/*width:490px;*/
+		margin-left: 3px;
+		margin-right: 3px;
+		margin-top:1%;
+		margin-bottom: 2px;
+}
+
+
+.example {
+	margin-left:1%;
+}
+/*p span {
+	font-weight: 1px;
+	font-size: 9px;
+	font:  bold;
+}*/

@@ -1,30 +1,77 @@
 <div style="margin: 0 20% 0 10%">
-	
-
-	<div class="container megatron col-md-8 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-2 ">
+	<div class="container megatron col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-1 col-xs-offset-8 col-xs-offset-1 ">
 			<div class="worded">
 
 				<div class="container face front">
 						<div class="word row">
 							<div class="col-md-8 col-xs-8 col-sm-8 col-md-offset-1 col-xs-offset-1 col-sm-offset-1 ">
 								<h2><%= @word.term %></h2>
-								<h1></h1>
 							</div>
-							
-						</div>
-				</div>
+						</div> <!-- end of word row -->
+
+						<div class="row word_db">
+							<div class="col-md-8 col-xs-7 col-sm-7">
+								pronunciation:
+								<h5>
+									<%= @word.pronunciation %>
+								</h5>
+								originated from:
+								<h5>
+									<%= @word.origin %>
+								</h5>
+							</div>
+						</div><!-- end or word db row -->
+
+				</div> <!-- end of container -->
 
 				<div class="face back">
-					<h2>Backface</h2>
-					<div class="">
-						<%= link_to(image_tag('speaker.png', :class => "pronounce")) %>
+					<div class="" style="margin-top:3px">
+						<%= audio_tag @word.audio.url, controls: true, class: "audio-player"%>
 					</div>
-					<div class="story"
-						
+
+					<div class="container">
+					<% @word.meanings.each do |meaning| %>
+						<div class="meaning_card">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-1 col-sm-1 col-xs-1" >
+										<span class="badge"><%= meaning.meaning_number %></span>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-1 col-sm-offset-1 col-xs-offset 1"><%= meaning.part_of_speech %></div>
+								</div>
+
+								<div class="conatiner">
+									<div class="row define">
+										<div class=""> <%= meaning.definition %> </div>
+									</div>
+									<div class="row">
+
+										<div class=" well well-sm"> <span><em><strong> usage: </strong></em></span><%= meaning.context %> </div> 
+									</div>
+								</div>
+							</div>
+								<!-- examples -->
+									<div class="btn-group example">
+										  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										    More Examples <span class="caret"></span>
+										  </button>
+										  <ul class="dropdown-menu" role="menu">
+										    <li class="divider"></li>
+										    <li><a href="#">examples would be here</a></li>
+										  </ul>
+										</div>
+									<p><td><%= link_to 'editor', edit_word_meaning_path(meaning.word, meaning)  %></td></p>
+							<% end %>
+						</div>
 					</div>
+
+
+
+					<!-- Single button -->
+
+
 				</div>
 
 		 	</div>
 	</div>
-
 </div>
