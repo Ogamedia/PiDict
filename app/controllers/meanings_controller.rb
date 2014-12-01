@@ -5,8 +5,7 @@ class MeaningsController < ApplicationController
     @meanings = Meaning.all
   end
 
-  def main
-  end
+  
 
   def show
   end

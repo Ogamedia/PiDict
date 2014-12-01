@@ -76,6 +76,11 @@ GEM
     libv8 (3.16.14.7)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta_search (0.5.4)
+      actionpack (>= 3.0.0.beta4)
+      activerecord (>= 3.0.0.beta4)
+      activesupport (>= 3.0.0.beta4)
+      arel (>= 0.4.0)
     method_source (0.8.2)
     mime-types (2.4.3)
     minitest (5.4.3)
@@ -166,6 +171,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
+  meta_search
   paperclip (~> 4.2)
   pry
   pry-byebug

@@ -53,3 +53,6 @@ gem "font-awesome-rails"
 
 gem 'paperclip', "~> 4.2"
 gem 'rmagick', '~> 2.13.3'
+
+gem "meta_search"
+# gem "meta_where", :git => "git://github.com/ernie/meta_where.git"

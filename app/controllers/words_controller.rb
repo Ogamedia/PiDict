@@ -6,7 +6,12 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
+    @words = Word.where("term Like ?", "%#{params[:search]}%")
+  end
+
+  def main
     @words = Word.all
+    @words = Word.where("term Like ?", "%#{params[:search]}%")
   end
 
   def wording
@@ -26,6 +31,11 @@ class WordsController < ApplicationController
   # GET /words/1/edit
   def edit
   end
+
+  # def self.search(search)
+    # search_condition = "%" + search + "%"
+    # Words.where(conditions: ["title LIKE ? OR description LIKE ?", search_condition])
+  # end
 
   # POST /words
   # POST /words.json

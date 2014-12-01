@@ -44,7 +44,7 @@ body {
     background-image: linear-gradient(top, #f6f6f6, #eae8e8);
 }
 
-.form-wrapper #search {
+.form-wrapper .search {
     width: 330px;
     /*height: 20px;*/
     padding: 10px 5px;
@@ -55,28 +55,28 @@ body {
     border-radius: 3px;      
 }
 
-.form-wrapper #search:focus {
+.form-wrapper .search:focus {
     outline: 0; 
     border-color: #aaa;
     box-shadow: 0 1px 1px #bbb inset;  
 }
 
-.form-wrapper #search::-webkit-input-placeholder {
+.form-wrapper .search::-webkit-input-placeholder {
    color: #999;
    font-weight: normal;
 }
 
-.form-wrapper #search:-moz-placeholder {
+.form-wrapper .search:-moz-placeholder {
     color: #999;
     font-weight: normal;
 }
 
-.form-wrapper #search:-ms-input-placeholder {
+.form-wrapper .search:-ms-input-placeholder {
     color: #999;
     font-weight: normal;
 } 
 
-.form-wrapper #submit {
+.form-wrapper .submit {
     float: right;    
     border: 1px solid #00748f;
     height: 42px;
@@ -103,7 +103,7 @@ body {
   
 .form-wrapper #submit:active {
     outline: 0;    
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;    
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
 }
   
 .form-wrapper #submit::-moz-focus-inner {
